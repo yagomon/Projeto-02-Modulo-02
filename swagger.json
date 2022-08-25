@@ -1,0 +1,189 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Registro de pessoas",
+      "description": "API para CRUD de cadastro de pessoas.",
+      "termsOfService": "",
+      "contact": {
+        "email": "cadastro.pessoas@cadastro.com.br"
+      },
+      "version": "1.0.0"
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/registro",
+        "description": "API de teste"
+      },
+      {
+        "url": "link heroku app",
+        "description": "API de produção"
+      }
+    ],
+    "paths": {
+      "/pessoas": {
+        "get": {
+          "summary": "Lista de todos os registros",
+          "description": "Rota responsável por listar todos os registros",
+          "tags": ["Pessoas"],
+          "responses": {
+            "404": {
+              "description": "Not Found"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/pessoa/{id}": {
+        "get": {
+          "summary": "Busca uma pessoa pelo ID",
+          "description": "Rota responsável por buscar uma pessoa pelo ID",
+          "tags": ["Pessoa"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id da pessoa para a busca",
+              "required": true
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/create": {
+        "post": {
+          "summary": "Cadastrar uma pessoa",
+          "description": "Rota responsável por cadastrar uma pessoa",
+          "tags": ["NewPessoa"],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                },
+                "examples": {
+                  "Registro": {
+                    "value": {
+                      "nome": "Max",
+                      "sobrenome": "LyFe",
+                      "cpf": "011.145.486-52",
+                      "estadoSivil": "Solteiro",
+                      "dataNascimento":"01/12/1992"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "201": {
+              "description": "Create",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/update/{id}": {
+        "put": {
+          "summary": "Editar o registro de uma pessoa pelo ID",
+          "description": "Rota responsável por editar o registro de uma pessoa pelo ID",
+          "tags": ["EditPessoa"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id da pessoa para a busca",
+              "required": true
+            }
+          ],
+          "requestBody": {
+            "content": {
+              "application/json": {
+                "schema": {
+                },
+                "examples": {
+                  "Paletas": {
+                    "value": {
+                      "nome": "Maximiliano Gonzalo",
+                      "sobrenome": "Lopez y Fernandez",
+                      "cpf": "048.154.875-52",
+                      "estadoSivil": "Solteiro",
+                      "dataNascimento":"01/12/1992"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "OK",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "object"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/delete/{id}": {
+        "delete": {
+          "summary": "Apaga o registro de uma pessoa pelo ID",
+          "description": "Rota responsável por apagar o registro de uma pessoa pelo ID",
+          "tags": ["DeletePessoa"],
+          "parameters": [
+            {
+              "name": "id",
+              "in": "path",
+              "description": "Id da pessoa para deleção",
+              "required": true
+            }
+          ],
+          "responses": {
+            "400": {
+              "description": "Bad Request"
+            },
+            "200": {
+              "description": "OK"
+            }
+          }
+        }
+      }
+    }
+}

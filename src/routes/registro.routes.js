@@ -1,3 +1,7 @@
+/* Importación de los archivos swagger-ui-express y swagger.json. */
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('../../swagger.json');
+
 /* Esto es importar el módulo express. */
 const express = require('express');
 /* Creación de un nuevo objeto de enrutador. */
@@ -6,6 +10,10 @@ const router = express.Router();
 /* Importando el archivo registro.controller.js. */
 const registroControllers = require('../controllers/registro.controller');
 const { validId, validObjectBody } = require('../middlewares/cadastro.middlewares');
+
+/* Una ruta a la documentación de swagger. */
+router.use('/api-docs', swaggerUi.serve);
+router.get('/api-docs', swaggerUi.setup(swaggerDocument));
 
 // ----------------------- GET -----------------------
 /* Una ruta a la página `registro`. */
