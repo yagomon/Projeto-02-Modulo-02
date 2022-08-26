@@ -51,7 +51,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 ### Autor
 ---
 
-<a <sub><b>Max LyFe</b></sub></a>
+<a><sub><b>Max LyFe</b></sub></a>
 
 
 Feito com ❤️ por Maximiliano Gonzalo LyFe.
