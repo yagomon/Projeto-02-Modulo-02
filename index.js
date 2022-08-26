@@ -6,9 +6,12 @@ const cors = require('cors');
 const route = require('./src/routes/registro.routes');
 /* Importando el archivo dataBase.js. */
 const connectToDatabase = require('./src/dataBase/dataBase');
+/* Cargando las variables de entorno desde el archivo .env. */
+require('dotenv').config();
 
-/* Definición del puerto que estará escuchando el servidor. */
-const port = 3000;
+
+/* Establecer el puerto en 3000 si la variable de entorno PORT no está establecida. */
+const port = process.env.PORT || 3000;
 
 /* Creando una instancia del módulo express. */
 const app = express();
@@ -28,5 +31,5 @@ app.use('/registro', route);
 
 /* Escuchando el puerto 3000. */
 app.listen(port, () => {
-    console.log(`Rodando em http://localhost:${port}`);
+    console.log(`Servidor rodando na porta ${port}`);
 });
