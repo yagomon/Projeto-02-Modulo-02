@@ -3,7 +3,7 @@
 <p align="center">Banco de dados de pessoas.</p>
 
 <h1 align="center">
-    <a href="https://pt-br.reactjs.org/">🔗 React</a>
+    <a href="https://pt-br.reactjs.org/">🔗 Node</a>
 </h1>
 <p align="center">Banco para cadastro de pessoas</p>
 
