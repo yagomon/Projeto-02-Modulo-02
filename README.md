@@ -31,7 +31,7 @@ Além disto é bom ter um editor para trabalhar com o código como [VSCode](http
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/maxlyfe/Projeto-02-Modulo-02>
+$ git clone https://github.com/maxlyfe/Projeto-02-Modulo-02
 
 # Instale as dependências
 $ npm install
