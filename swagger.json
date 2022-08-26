@@ -15,7 +15,7 @@
         "description": "API de teste"
       },
       {
-        "url": "link heroku app",
+        "url": "https://registro-pessoas.herokuapp.com/registro",
         "description": "API de produção"
       }
     ],
